@@ -1,1 +1,1 @@
-Shell basics
+Scripts on shell basics
