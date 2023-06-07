@@ -1,1 +1,1 @@
-Deleting the file betty from /tmp/my_first_directory
+Deleting the directory my_first_directory from the /tmp directory
