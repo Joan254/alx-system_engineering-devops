@@ -1,7 +1,9 @@
 Additional Elements and Their Purpose:
 
 Firewalls: Provide security by controlling and monitoring incoming and outgoing network traffic. A Web Application Firewall (WAF) protects against web-based attacks.
+
 SSL Certificate: Enables HTTPS to secure data in transit between the user and the server.
+
 Monitoring Clients: Collect data for monitoring purposes, providing insights into the performance, health, and security of the infrastructure.
 
 Why Firewalls:
@@ -29,12 +31,17 @@ Issues:
 Terminating SSL at the Load Balancer Level:
 
 Issue: While terminating SSL at the load balancer improves performance, it also means that traffic between the load balancer and the servers is unencrypted. If this internal traffic is compromised, it poses a security risk.
+
 Solution: Encrypt internal traffic by using end-to-end SSL encryption or other secure communication methods between components.
+
 Single MySQL Server for Writes:
 
 Issue: Having only one MySQL server capable of accepting writes is a single point of failure. If this server fails, write operations cannot be performed.
+
 Solution: Implement database replication or clustering to provide redundancy and fault tolerance for write operations.
+
 Identical Components on Servers:
 
 Issue: Having servers with identical components may lead to uniform vulnerabilities. If a vulnerability affects one server, it could potentially impact all servers.
+
 Solution: Introduce diversity in server configurations, update schedules, or use different technologies to reduce the impact of a single vulnerability.
