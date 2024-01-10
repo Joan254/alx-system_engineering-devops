@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # Debugging inorder to find out what's keeping my Ubuntu container's
 # Nginx installation from listening on port 80
 # Delete the existing ../sites-enabled/default and replace it with a copy of
