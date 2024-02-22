@@ -1,4 +1,19 @@
 #!/usr/bin/env bash
 # Gracefully reloads Gunicorn.
 
-ps aux | grep gunicorn | awk '{ print $2 }' | xargs kill -HUP
+# Get the process IDs (PIDs) of Gunicorn processes
+gunicorn_pids=$(pgrep gunicorn)
+
+# Check if there are Gunicorn processes running
+if [ -z "$gunicorn_pids" ]; then
+    echo "No Gunicorn processes found."
+    exit 1
+fi
+
+# Iterate through each Gunicorn process and gracefully reload it
+for pid in $gunicorn_pids; do
+    echo "Reloading Gunicorn process with PID: $pid"
+    kill -HUP $pid
+done
+
+echo "Gunicorn reloaded gracefully."
